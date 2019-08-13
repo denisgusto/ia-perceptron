@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inteligência Artificial</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="ia.js"></script>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>Inteligência artificial</h1>
+        <p>Redes Neurais Artificiais utilizando Perceptron Simples</p> 
+      </div>
+      
+      <div class="container">
+        <div class="row">
+            <!-- Entrada de dados (X) -->
+            <div class="col-sm-3">
+            <h4>Entrada de dados (X)</h3><br>
+            <form>
+                x1: <input type="number" id="x1"><br><br>
+                x2: <input type="number" id="x2"><br><br>
+                x3: <input type="number" id="x3"><br><br>
+                x4: <input type="number" id="x4"><br><br>
+            </form>
+          </div>
+         
+          <!-- Peso neurônio (W) -->
+          <div class="col-sm-3">
+            <h4>Peso neurônio (W)</h3><br>
+            <form>
+                w1: <input type="number" id="w1"><br><br>
+                w2: <input type="number" id="w2"><br><br>
+                w3: <input type="number" id="w3"><br><br>
+                w4: <input type="number" id="w4"><br><br>
+            </form>
+          </div>
+
+            <!-- Variáveis -->
+            <div class="col-sm-3">
+                    <h4>Variáveis</h3><br>
+                    <form>
+                        K-ésima amostra (d): <br> <input type="number" id="d"><br><br>
+                        Saída do Perceptron (y): <br> <input type="number" id="y"><br><br>
+                        Taxa de Aprendizagem (n): <input type="number"  id="n"><br><br>
+                    </form>
+                </div>
+
+          <!-- Treinamento -->
+          <div class="col-sm-3">
+            <h4>Treinamento</h3><br>
+            <form>
+                Qtd: <input type="number" disabled id="qtd"><br><br>
+                w1: <input type="number" disabled id="wt1"><br><br>
+                w2: <input type="number" disabled id="wt2"><br><br>
+                w3: <input type="number" disabled id="wt3"><br><br>
+                w4: <input type="number" disabled id="wt4"><br><br>
+                <input type="button" value="Executar treinamento" class="btn btn-primary" onclick="treinamento();">
+            </form>
+          </div>
+        </div>
+      </div>
+
+    <!-- Valores padrões -->
+    <script>
+        // Atribuições
+        var x = { 
+            x1: -1, 
+            x2: 0.6, 
+            x3: 0.9, 
+            x4: 0.8
+        };
+
+        var w = { 
+            w1: 0.34, 
+            w2: -0.23, 
+            w3: 0.94, 
+            w4: 0.05
+        };
+
+        var variaveis = {
+            d: -1,
+            y: 1,
+            n: 0.05,
+            u: 0
+        }
+
+        // Entrada de dados padrão (X)
+        document.getElementById("x1").value = x.x1;
+        document.getElementById("x2").value = x.x2;
+        document.getElementById("x3").value = x.x3;
+        document.getElementById("x4").value = x.x4;
+
+        // Peso neurônio padrão (W)
+        document.getElementById("w1").value = w.w1;
+        document.getElementById("w2").value = w.w2;
+        document.getElementById("w3").value = w.w3;
+        document.getElementById("w4").value = w.w4;
+
+        // Variáveis padrão
+        document.getElementById("d").value = variaveis.d;
+        document.getElementById("y").value = variaveis.y;
+        document.getElementById("n").value = variaveis.n;
+    </script>
+</body>
+</html>
+
