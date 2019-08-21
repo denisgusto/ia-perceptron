@@ -30,6 +30,7 @@
                 x2: <input type="number" id="x2"><br><br>
                 x3: <input type="number" id="x3"><br><br>
                 x4: <input type="number" id="x4"><br><br>
+                <input type="button" value="Randomizar" class="btn btn-success" onclick="randomizar();">
             </form>
           </div>
          
@@ -49,8 +50,8 @@
                     <h4>Variáveis</h3><br>
                     <form>
                         K-ésima amostra (d): <br> <input type="number" id="d"><br><br>
-                        Saída do Perceptron (y): <br> <input type="number" id="y"><br><br>
                         Taxa de Aprendizagem (n): <input type="number"  id="n"><br><br>
+                        Saída do Perceptron (y): <br> <input type="number" disabled id="y"><br><br>
                     </form>
                 </div>
 
@@ -88,7 +89,7 @@
 
         var variaveis = {
             d: -1,
-            y: 1,
+            y: null,
             n: 0.05,
             u: 0
         }

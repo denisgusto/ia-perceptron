@@ -23,6 +23,7 @@ function treinamento(){
         var wt2 = document.getElementById("wt2");
         var wt3 = document.getElementById("wt3");
         var wt4 = document.getElementById("wt4");
+        var yt = document.getElementById("y");
         
         qtd.value = 0;
 
@@ -31,6 +32,15 @@ function treinamento(){
             u = ((x1*w1)+(x2*w2)+(x3*w3)+(x4*w4));
 
             if(u > 0){
+                y = 1;
+            }else{
+                y = -1;
+            }
+
+            if(y == d) {
+                yt.value = y*1;
+                break;
+            }else{
                 var ntemp = n*(d-y);
 
                 var x1temp = ntemp*x1;
@@ -51,21 +61,25 @@ function treinamento(){
                 qtd.value = (qtd.value*1) + 1;
 
                 console.log(u);
-            }else{
-                if(qtd.value == 0){
-                    wt1.value = 0;
-                    wt2.value = 0;
-                    wt3.value = 0;
-                    wt4.value = 0;
-                    
-                    console.log('PAROU!');
-                    console.log(u);
-                    break;
-                }
-                console.log('PAROU!');
-                console.log(u);
-                break;
             }
         } 
+}
+
+function random(min, max){
+    return min + Math.random() * (max - min);
+}
+
+function randomizar(){
+    //Entrada de dados (X)
+    //document.getElementById("x1").value = parseFloat(random(-1, 1)).toFixed(2);
+    document.getElementById("x2").value = parseFloat(random(-1, 1)).toFixed(2);
+    document.getElementById("x3").value = parseFloat(random(-1, 1)).toFixed(2);
+    document.getElementById("x4").value = parseFloat(random(-1, 1)).toFixed(2);
+    
+    // Peso neurônio (W)
+    document.getElementById("w1").value = parseFloat(random(-1, 1)).toFixed(2);
+    document.getElementById("w2").value = parseFloat(random(-1, 1)).toFixed(2);
+    document.getElementById("w3").value = parseFloat(random(-1, 1)).toFixed(2);
+    document.getElementById("w4").value = parseFloat(random(-1, 1)).toFixed(2);
 }
 
