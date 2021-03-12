@@ -1,2 +1,2 @@
 # Inteligência artificial
-Redes Neurais Artificiais utilizando Perceptron Simples
+Testes de Redes Neurais Artificiais utilizando Perceptron Simples.
